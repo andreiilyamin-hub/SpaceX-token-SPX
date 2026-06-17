@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SPX SpaceXCoin | Meme Token</title>
+  <meta name="description" content="SPX SpaceXCoin — community-driven meme token built for launch, growth and the journey to the moon." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <header class="header">
+    <a class="brand" href="#top"><img src="SPX.png" alt="SPX logo" /><span>SPX</span></a>
+    <nav>
+      <a href="#about">О токене</a>
+      <a href="#tokenomics">Токеномика</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-btn" href="#buy">Купить SPX</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">🚀 Community Meme Token</p>
+        <h1>SPX <span>SpaceXCoin</span></h1>
+        <p class="lead">Мем-токен для сообщества, запуска, роста и полёта на луну. Простой, яркий и готовый к вирусному движению.</p>
+        <div class="actions">
+          <a class="btn primary" href="#buy">Купить SPX</a>
+          <a class="btn secondary" href="#tokenomics">Токеномика</a>
+        </div>
+        <div class="contract">
+          <span>Contract</span>
+          <code id="contract">0x33a2345ac3a2e1bba1ec982542a24a9cd45632c0</code>
+          <button onclick="copyContract()">Копировать</button>
+        </div>
+      </div>
+      <div class="rocket-card">
+        <div class="planet"></div>
+        <div class="rocket">🚀</div>
+        <div class="orbit"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section grid-two">
+      <div>
+        <p class="eyebrow">О проекте</p>
+        <h2>Токен сообщества с космической миссией</h2>
+        <p>SPX создан как мем-проект с ярким визуальным стилем, простой идеей и понятной дорожной картой: запуск, сообщество, листинги и расширение.</p>
+      </div>
+      <div class="card">
+        <h3>Миссия</h3>
+        <p>Создать сильное комьюнити, генерировать вирусный контент, наращивать ликвидность и подготовить проект к размещению на платформах отслеживания и более широких листингах.</p>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="section">
+      <p class="eyebrow">Токеномика</p>
+      <h2>Простое распределение</h2>
+      <div class="cards">
+        <div class="card"><strong>50%</strong><span>Ликвидность</span></div>
+        <div class="card"><strong>20%</strong><span>Маркетинг</span></div>
+        <div class="card"><strong>15%</strong><span>Развитие</span></div>
+        <div class="card"><strong>10%</strong><span>Бонусы</span></div>
+        <div class="card"><strong>5%</strong><span>Команда</span></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <p class="eyebrow">Дорожная карта</p>
+      <h2>Путь запуска</h2>
+      <div class="timeline">
+        <div><b>01 — Запуск</b><p>Развертывание токена, пул ликвидности, первые держатели и первые сообщения в сообществе.</p></div>
+        <div><b>02 — Рост</b><p>Telegram, X/Twitter, мемы, веб-сайт, первая маркетинговая кампания.</p></div>
+        <div><b>03 — Видимость</b><p>DEXTools, DexScreener, CoinGecko/CoinMarketCap подготовка, расширение аудитории.</p></div>
+        <div><b>04 — Масштаб</b><p>Новые листинги, партнёрства и расширение экосистемы SPX.</p></div>
+      </div>
+    </section>
+
+    <section id="buy" class="section buy-box">
+      <h2>Купить SPX</h2>
+      <p>Используйте адрес контракта выше и подключите кошелёк к DEX. Перед покупкой обязательно проверяйте адрес контракта.</p>
+      <a class="btn primary" href="https://pancakeswap.finance/swap" target="_blank" rel="noopener">Открыть PancakeSwap</a>
+    </section>
+
+    <section id="faq" class="section">
+      <p class="eyebrow">FAQ</p>
+      <h2>Частые вопросы</h2>
+      <details><summary>Это официальный сайт SPX?</summary><p>Да, это сайт сообщества SPX SpaceXCoin.</p></details>
+      <details><summary>Где покупать токен?</summary><p>На DEX через адрес контракта. Всегда сверяйте адрес перед покупкой.</p></details>
+      <details><summary>Есть ли риски?</summary><p>Да. Мем-токены высокорисковые. Покупайте только на сумму, которую готовы потерять.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 SPX SpaceXCoin</span>
+    <span>Built for the moon mission</span>
+  </footer>
+
+  <script>
+    function copyContract(){
+      navigator.clipboard.writeText(document.getElementById('contract').textContent);
+      alert('Адрес контракта скопирован');
+    }
+  </script>
+</body>
+</html>
