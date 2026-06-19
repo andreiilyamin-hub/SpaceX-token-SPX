@@ -1,19 +1,331 @@
-<!doctype html>
+
+
+Перейти к содержимому
+Gmail используется с программой чтения с экрана
+Сообщения
+Начало работы с Gmail
+Настройте вид своей почты
+Измените фото профиля
+Импорт адресов и почты
+Установите приложение Gmail
+Занято 0 % от 15 ГБ
+Условия использования · Конфиденциальность · Правила программы
+Последние действия в аккаунте: 29 минут назад
+Подробные сведения
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SPX SpaceXCoin — Community Meme Token</title>
   <meta name="description" content="SPX SpaceXCoin — мем-токен для сообщества, запуска, роста и полёта на луну." />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background: linear-gradient(135deg, #001bff 0%, #6b00ff 45%, #ff008c 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#ffffff 1px, transparent 1px);
+      background-size: 70px 70px, 120px 120px;
+      background-position: 0 0, 35px 45px;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 9%;
+      background: rgba(12, 0, 55, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .buy-small,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+    }
+
+    .buy-small,
+    .btn-primary {
+      color: #111;
+      background: linear-gradient(90deg, #00f5ff, #caff00);
+      box-shadow: 0 0 25px rgba(0, 245, 255, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+      padding: 90px 9% 70px;
+    }
+
+    .badge {
+      color: #00f5ff;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(52px, 7vw, 96px);
+      line-height: 0.92;
+      margin-bottom: 24px;
+      font-weight: 950;
+    }
+
+    h1 span {
+      color: #fff000;
+      display: block;
+    }
+
+    .lead {
+      max-width: 650px;
+      font-size: 21px;
+      line-height: 1.55;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .contract {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .contract code {
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .copy-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 800;
+      cursor: pointer;
+      background: #ffffff;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .hero-card {
+      min-height: 380px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 80% 35%, rgba(0, 245, 255, 0.45), transparent 18%),
+        rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo {
+      width: min(320px, 75%);
+      height: auto;
+      border-radius: 50%;
+      display: block;
+      filter: drop-shadow(0 0 32px rgba(0, 180, 255, 0.85));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    section {
+      padding: 70px 9%;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 22px;
+      font-weight: 950;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      min-height: 130px;
+    }
+
+    .card strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #fff000;
+    }
+
+    .roadmap {
+      display: grid;
+      gap: 16px;
+      max-width: 900px;
+    }
+
+    .step {
+      padding: 20px 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid #00f5ff;
+      font-weight: 700;
+    }
+
+    details {
+      margin-bottom: 14px;
+      padding: 18px 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    summary {
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 34px 9%;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(10, 0, 50, 0.55);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="stars"></div>
-  <header class="header">
+
+  <header>
     <a class="brand" href="#top">
-      <img src="SPX logo.png" />
+      <img src="SPX-logo.png" alt="SPX logo" />
       <span>SPX</span>
     </a>
+
     <nav>
       <a href="#about">О токене</a>
       <a href="#tokenomics">Токеномика</a>
@@ -28,79 +340,106 @@
       <div class="hero-text">
         <p class="badge">🚀 Community Meme Token</p>
         <h1>SPX <span>SpaceXCoin</span></h1>
-        <p class="lead">Мем-токен для сообщества, запуска, роста и полёта на луну. Простой, яркий и готовый к вирусному движению.</p>
+        <p class="lead">
+          Мем-токен для сообщества, запуска, роста и полёта на луну.
+          Простой, яркий и готовый к вирусному движению.
+        </p>
+
         <div class="actions">
-          <a class="btn primary" href="#buy">Купить SPX</a>
-          <a class="btn secondary" href="#tokenomics">Токеномика</a>
+          <a class="btn btn-primary" href="#buy">Купить SPX</a>
+          <a class="btn btn-secondary" href="#tokenomics">Токеномика</a>
         </div>
+
         <div class="contract">
           <span>Contract</span>
-          <code>0x33a2345ac3a2e1bba1ec982542a24a9cd45632c0</code>
-          <button onclick="navigator.clipboard.writeText('0x33a2345ac3a2e1bba1ec982542a24a9cd45632c0')">Копировать</button>
+          <code id="contract">0x33a2345ac3a2e1bbaleC982542a24a9cd45632c0</code>
+          <button class="copy-btn" onclick="copyContract()">Копировать</button>
         </div>
       </div>
+
       <div class="hero-card">
-        <div class="planet"></div>
-        <div class="rocket">🚀</div>
-        <div class="orbit"></div>
+        <img src="SPX-logo.png" alt="SPX Logo" class="hero-logo" />
       </div>
     </section>
 
-    <section id="about" class="section grid-two">
-      <div>
-        <p class="eyebrow">О проекте</p>
-        <h2>Токен сообщества с космической миссией</h2>
-        <p>SPX создан как мем-проект с сильным визуальным стилем, понятной дорожной картой и фокусом на рост сообщества.</p>
-      </div>
-      <div class="stats">
-        <div><strong>100%</strong><span>Community driven</span></div>
-        <div><strong>0%</strong><span>Сложных обещаний</span></div>
-        <div><strong>∞</strong><span>Мем-потенциал</span></div>
-      </div>
-    </section>
+    <section id="about">
+      <h2 class="section-title">О проекте</h2>
+      <p class="lead">
+        SPX создан как мем-проект с сильным визуальным стилем,
+        понятной дорожной картой и фокусом на росте сообщества.
+      </p>
 
-    <section id="tokenomics" class="section">
-      <p class="eyebrow">Токеномика</p>
-      <h2>Простое распределение</h2>
-      <div class="cards">
-        <div class="card"><strong>50%</strong><span>Ликвидность</span></div>
-        <div class="card"><strong>20%</strong><span>Маркетинг</span></div>
-        <div class="card"><strong>15%</strong><span>CEX Listings</span></div>
-        <div class="card"><strong>10%</strong><span>Community Rewards</span></div>
-        <div class="card"><strong>5%</strong><span>Команда</span></div>
+      <div class="grid">
+        <div class="card"><strong>100%</strong>Community driven</div>
+        <div class="card"><strong>0%</strong>Сложных обещаний</div>
+        <div class="card"><strong>Mem</strong>Потенциал</div>
       </div>
     </section>
 
-    <section id="roadmap" class="section">
-      <p class="eyebrow">Roadmap</p>
-      <h2>Путь запуска</h2>
-      <div class="timeline">
-        <div><b>Фаза 1</b><span>Запуск сайта, токена и первых соцсетей</span></div>
-        <div><b>Фаза 2</b><span>Рост сообщества, мемы, первые держатели</span></div>
-        <div><b>Фаза 3</b><span>CoinGecko, CoinMarketCap и маркетинговая кампания</span></div>
-        <div><b>Фаза 4</b><span>Листинги, партнёрства и расширение проекта</span></div>
+    <section id="tokenomics">
+      <h2 class="section-title">Токеномика</h2>
+      <div class="grid">
+        <div class="card"><strong>50%</strong>Ликвидность</div>
+        <div class="card"><strong>20%</strong>Маркетинг</div>
+        <div class="card"><strong>15%</strong>Объявления CEX</div>
+        <div class="card"><strong>10%</strong>Награды сообщества</div>
+        <div class="card"><strong>5%</strong>Резерв</div>
       </div>
     </section>
 
-    <section id="buy" class="section buy">
-      <p class="eyebrow">Запуск</p>
-      <h2>Купить SPX</h2>
-      <p>Добавь сюда ссылку на PancakeSwap/DEX после готовности пары. Пока используй контракт для поиска токена.</p>
-      <a class="btn primary" href="#">Buy SPX</a>
+    <section id="roadmap">
+      <h2 class="section-title">Дорожная карта</h2>
+      <div class="roadmap">
+        <div class="step">Фаза 1 — запуск сайта, токена и первых соцсетей.</div>
+        <div class="step">Фаза 2 — рост сообщества, мемы, первые держатели.</div>
+        <div class="step">Фаза 3 — CoinGecko, CoinMarketCap и маркетинговая кампания.</div>
+        <div class="step">Фаза 4 — листинг проекта, партнёрство и расширение.</div>
+      </div>
     </section>
 
-    <section id="faq" class="section">
-      <p class="eyebrow">FAQ</p>
-      <h2>Частые вопросы</h2>
-      <details open><summary>Что такое SPX?</summary><p>SPX — мем-токен с космической темой и фокусом на сообщество.</p></details>
-      <details><summary>Где купить?</summary><p>После добавления ликвидности ссылка на DEX будет добавлена на сайт.</p></details>
-      <details><summary>Это официальный SpaceX?</summary><p>Нет. SPX — независимый мем-проект и не связан с SpaceX или Elon Musk.</p></details>
+    <section id="buy">
+      <h2 class="section-title">Купить SPX</h2>
+      <p class="lead">
+        Добавьте ссылку на PancakeSwap/DEX после создания пары.
+        Пока используется контракт для определения токена.
+      </p>
+      <a class="btn btn-primary" href="#">Купить SPX</a>
+    </section>
+
+    <section id="faq">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+
+      <details>
+        <summary>Что такое SPX?</summary>
+        <p>SPX — мем-токен с космической темой и фокусом на сообщество.</p>
+      </details>
+
+      <details>
+        <summary>Как купить?</summary>
+        <p>После добавления ликвидности ссылка на DEX будет добавлена на сайт.</p>
+      </details>
+
+      <details>
+        <summary>Это официальный SpaceX?</summary>
+        <p>Нет. SPX — независимый мем-проект и не связан со SpaceX или Илоном Маском.</p>
+      </details>
     </section>
   </main>
 
   <footer>
     <span>© 2026 SPX SpaceXCoin</span>
-    <span>Community meme token</span>
+    <span>Token meme сообщество</span>
   </footer>
+
+  <script>
+    function copyContract() {
+      const text = document.getElementById("contract").innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        alert("Contract copied");
+      });
+    }
+  </script>
 </body>
 </html>
+index.html
+Отображается файл "index.html"
